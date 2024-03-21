@@ -1,0 +1,106 @@
+body {
+  padding: 1em;
+}
+
+.item {
+  max-height: 225px;
+  width: 150px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 2px;
+  margin: 2px;
+  /* float: left; */
+  flex: 1;
+}
+
+.item img {
+  max-height: 225px;
+  width: 100%;
+  height: 100%;
+}
+
+.item:hover {
+  transition: all 1s;
+  transform: scale(1.3);
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+  /* flex-basis: 150px; */
+}
+
+/* n번째를 크게 만듦 */
+.item:nth-child(3) {
+  flex: 3;
+}
+
+.first {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+  /* flex-basis: 150px; */
+}
+.big img {
+  max-height: 125px;
+  width: 100%;
+  height: 100%;
+}
+.p {
+  width: 225px;
+  height: 130px;
+}
+
+.second {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+  /* flex-basis: 150px; */
+}
+
+.big {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+  /* flex-basis: 150px; */
+}
+
+.container3 hr {
+  height: 100px;
+  width: 2px;
+  background-color: red;
+}
+
+.container3 p {
+  padding-right: 20px;
+}
+button {
+  background-color: rgb(250, 219, 224);
+  color: red;
+  height: 30px;
+  border: 0px;
+}
+.container3 {
+  margin-left: 50px;
+}
+.container3 .second {
+  margin-left: -50px;
+  width: 550px;
+  font-size: 15px;
+}
+
+.container3 .second ul {
+  margin-bottom: -15px;
+}

@@ -1,0 +1,39 @@
+.table {
+  text-align: center;
+}
+
+table:hover {
+  transition: all 5s;
+  transform: rotateY(360deg) scale(5);
+}
+
+h2:hover {
+  transition: all 3s;
+  transform: rotateY(1800deg);
+}
+
+table {
+  margin: 0 auto;
+}
+
+/* .center {
+  text-align: -webkit-center;
+} */
+
+.first {
+  background-color: aqua;
+}
+
+.second {
+  background-color: greenyellow;
+}
+
+.fourth {
+  background-color: yellow;
+}
+
+table,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
