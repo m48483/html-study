@@ -1,0 +1,21 @@
+div {
+  /* height: 100px; */
+  width: 100px;
+  background-color: blue;
+}
+a {
+  text-decoration: none;
+}
+#box {
+  width: 200px;
+  min-height: 100px;
+}
+.box {
+  width: 100rem;
+  min-height: 10vh;
+}
+
+.box .img img {
+  width: 100rem;
+  min-height: 10vh;
+}
