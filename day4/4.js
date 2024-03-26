@@ -41,6 +41,8 @@ const teams = [
     win: 12,
     lose: 6,
     winLoseDiff: 15,
+    rate: 0.0,
+    kda: 0.0,
     kill: 607,
     death: 508,
     assist: 1386,
@@ -51,6 +53,8 @@ const teams = [
     win: 12,
     lose: 6,
     winLoseDiff: 8,
+    rate: 0.0,
+    kda: 0.0,
     kill: 589,
     death: 513,
     assist: 1285,
@@ -61,6 +65,8 @@ const teams = [
     win: 12,
     lose: 6,
     winLoseDiff: 8,
+    rate: 0.0,
+    kda: 0.0,
     kill: 605,
     death: 489,
     assist: 1367,
@@ -71,6 +77,8 @@ const teams = [
     win: 11,
     lose: 7,
     winLoseDiff: 6,
+    rate: 0.0,
+    kda: 0.0,
     kill: 504,
     death: 447,
     assist: 1190,
@@ -81,7 +89,8 @@ const teams = [
     win: 11,
     lose: 7,
     winLoseDiff: 5,
-
+    rate: 0.0,
+    kda: 0.0,
     kill: 514,
     death: 568,
     assist: 1223,
@@ -92,6 +101,8 @@ const teams = [
     win: 11,
     lose: 7,
     winLoseDiff: 4,
+    rate: 0.0,
+    kda: 0.0,
     kill: 530,
     death: 489,
     assist: 1324,
@@ -102,7 +113,8 @@ const teams = [
     win: 7,
     lose: 11,
     winLoseDiff: -4,
-
+    rate: 0.0,
+    kda: 0.0,
     kill: 495,
     death: 559,
     assist: 1281,
@@ -113,6 +125,8 @@ const teams = [
     win: 7,
     lose: 11,
     winLoseDiff: -9,
+    rate: 0.0,
+    kda: 0.0,
     kda: 2.89,
     kill: 495,
     death: 559,
@@ -124,7 +138,8 @@ const teams = [
     win: 5,
     lose: 13,
     winLoseDiff: -8,
-
+    rate: 0.0,
+    kda: 0.0,
     kill: 483,
     death: 514,
     assist: 1184,
@@ -135,6 +150,8 @@ const teams = [
     win: 2,
     lose: 16,
     winLoseDiff: -25,
+    rate: 0.0,
+    kda: 0.0,
     kill: 377,
     death: 630,
     assist: 858,
@@ -163,10 +180,12 @@ for (let i = 0; i < teams.length; i++) {
   winLoseDiff.innerHTML = el.winLoseDiff;
   tr.append(winLoseDiff);
   const rate = document.createElement("td");
-  rate.innerHTML = Math.floor((el.win / (el.win + el.lose)) * 100) / 100;
+  el.rate = Math.floor((el.win / (el.win + el.lose)) * 100) / 100;
+  rate.innerHTML = el.rate;
   tr.append(rate);
   const kda = document.createElement("td");
-  kda.innerHTML = Math.floor(((el.kill + el.assist) / el.death) * 100) / 100;
+  el.kda = Math.floor(((el.kill + el.assist) / el.death) * 100) / 100;
+  kda.innerHTML = el.kda;
   tr.append(kda);
   const kill = document.createElement("td");
   kill.innerHTML = el.kill;
@@ -179,3 +198,132 @@ for (let i = 0; i < teams.length; i++) {
   tr.append(assist);
   tbody.append(tr);
 }
+let isAsc = true;
+const onClickSortHandler = (property) => {
+  let asc;
+  if (property === "rank") {
+    if (isAsc) {
+      asc = teams.sort((a, b) => a.rank - b.rank);
+      isAsc = false;
+    } else {
+      asc = teams.sort((a, b) => b.rank - a.rank);
+      isAsc = true;
+    }
+  }
+  if (property === "win") {
+    if (isAsc) {
+      asc = teams.sort((a, b) => a.win - b.win);
+      isAsc = false;
+    } else {
+      asc = teams.sort((a, b) => b.win - a.win);
+      isAsc = true;
+    }
+  }
+  if (property === "lose") {
+    if (isAsc) {
+      asc = teams.sort((a, b) => a.lose - b.lose);
+      isAsc = false;
+    } else {
+      asc = teams.sort((a, b) => b.lose - a.lose);
+      isAsc = true;
+    }
+  }
+  if (property === "winLoseDiff") {
+    if (isAsc) {
+      asc = teams.sort((a, b) => a.winLoseDiff - b.winLoseDiff);
+      isAsc = false;
+    } else {
+      asc = teams.sort((a, b) => b.winLoseDiff - a.winLoseDiff);
+      isAsc = true;
+    }
+  }
+  if (property === "kill") {
+    if (isAsc) {
+      asc = teams.sort((a, b) => a.kill - b.kill);
+      isAsc = false;
+    } else {
+      asc = teams.sort((a, b) => b.kill - a.kill);
+      isAsc = true;
+    }
+  }
+  if (property === "death") {
+    if (isAsc) {
+      asc = teams.sort((a, b) => a.death - b.death);
+      isAsc = false;
+    } else {
+      asc = teams.sort((a, b) => b.death - a.death);
+      isAsc = true;
+    }
+  }
+  if (property === "assist") {
+    if (isAsc) {
+      asc = teams.sort((a, b) => a.assist - b.assist);
+      isAsc = false;
+    } else {
+      asc = teams.sort((a, b) => b.assist - a.assist);
+      isAsc = true;
+    }
+  }
+  if (property === "rate") {
+    if (isAsc) {
+      asc = teams.sort((a, b) => a.rate - b.rate);
+      isAsc = false;
+    } else {
+      asc = teams.sort((a, b) => b.rate - a.rate);
+      isAsc = true;
+    }
+  }
+  if (property === "kda") {
+    if (isAsc) {
+      asc = teams.sort((a, b) => a.kda - b.kda);
+      isAsc = false;
+    } else {
+      asc = teams.sort((a, b) => b.kda - a.kda);
+      isAsc = true;
+    }
+  }
+
+  const table = document.getElementsByTagName("table");
+  const tbody = getTCleanBody();
+  for (let i = 0; i < asc.length; i++) {
+    const el = asc[i];
+    const tr = document.createElement("tr");
+    const rank = document.createElement("td");
+    rank.innerHTML = `${el.rank} ${el.name}`;
+    tr.append(rank);
+    const win = document.createElement("td");
+    win.innerHTML = el.win;
+    tr.append(win);
+    const lose = document.createElement("td");
+    lose.innerHTML = el.lose;
+    tr.append(lose);
+    const winLoseDiff = document.createElement("td");
+    winLoseDiff.innerHTML = el.winLoseDiff;
+    tr.append(winLoseDiff);
+    const rate = document.createElement("td");
+    rate.innerHTML = Math.floor((el.win / (el.win + el.lose)) * 100) / 100;
+    tr.append(rate);
+    const kda = document.createElement("td");
+    kda.innerHTML = Math.floor(((el.kill + el.assist) / el.death) * 100) / 100;
+    tr.append(kda);
+    const kill = document.createElement("td");
+    kill.innerHTML = el.kill;
+    tr.append(kill);
+    const death = document.createElement("td");
+    death.innerHTML = el.death;
+    tr.append(death);
+    const assist = document.createElement("td");
+    assist.innerHTML = el.assist;
+    tr.append(assist);
+    tbody.setAttribute("id", "tbody");
+    tbody.append(tr);
+    table[0].append(tbody);
+  }
+};
+
+const getTCleanBody = () => {
+  let tbody = document.getElementById("tbody");
+  if (tbody) tbody.remove();
+
+  return document.createElement("tbody");
+};
