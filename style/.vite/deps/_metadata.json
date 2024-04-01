@@ -1,0 +1,52 @@
+{
+  "hash": "18bd4e1a",
+  "configHash": "39292c58",
+  "lockfileHash": "b8b05e4a",
+  "browserHash": "bde6ae75",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "f264905c",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "0cd230c9",
+      "needsInterop": true
+    },
+    "reactstrap": {
+      "src": "../../node_modules/reactstrap/esm/index.js",
+      "file": "reactstrap.js",
+      "fileHash": "962c2217",
+      "needsInterop": false
+    },
+    "@emotion/css": {
+      "src": "../../../node_modules/@emotion/css/dist/emotion-css.esm.js",
+      "file": "@emotion_css.js",
+      "fileHash": "5d3270f4",
+      "needsInterop": false
+    },
+    "@emotion/react": {
+      "src": "../../../node_modules/@emotion/react/dist/emotion-react.browser.esm.js",
+      "file": "@emotion_react.js",
+      "fileHash": "edc1acdb",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-7RDKOZLC": {
+      "file": "chunk-7RDKOZLC.js"
+    },
+    "chunk-PXJLUKTU": {
+      "file": "chunk-PXJLUKTU.js"
+    },
+    "chunk-FQO5W7GE": {
+      "file": "chunk-FQO5W7GE.js"
+    },
+    "chunk-ZS7NZCD4": {
+      "file": "chunk-ZS7NZCD4.js"
+    }
+  }
+}
