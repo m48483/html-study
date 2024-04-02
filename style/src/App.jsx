@@ -14,31 +14,6 @@ function App() {
     <>
       <div className="box"></div>
       <div className="box"></div>
-      {/* <Button color="danger">danger</Button> */}
-      {/* css in JS */}
-      <input
-        type="Number"
-        placeholder={`숫자를 입력해 주세요`}
-        onChange={(e) => setTranstion(e.target.value)}
-      />
-      <input
-        type="Number"
-        placeholder={`숫자를 입력해 주세요`}
-        onChange={(e) => setTransform(e.target.value)}
-      />
-      <div
-        className={css`
-          width: 100px;
-          height: 200px;
-          background-color: ${color};
-          &:hover {
-            background-color: hotpink;
-            transition: all ${transtion}s;
-            transform: rotate(${transform}deg) scale(2);
-          }
-        `}
-      ></div>
-      <input type="color" onChange={(e) => setColor(e.target.value)} />
     </>
   );
 }
