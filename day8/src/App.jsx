@@ -129,6 +129,14 @@ const keys = [...Object.keys(teams[0])];
 function App() {
   const [search, setSearch] = useState("");
   const [searchKey, setSearchKey] = useState("rank");
+  const [inputValue, setInputValue] = useState("");
+  const [tmp, setTmp] = useState([...teams]);
+  const onClickSearch = () => {
+    const te = teams
+      .filter((el) => el[searchKey].toString().includes(search))
+      .sort((a, b) => a[searchKey] - b[searchKey]);
+    setTmp(te);
+  };
   console.log(keys);
   return (
     <div>
@@ -139,8 +147,11 @@ function App() {
       </select>
       <input
         placeholder={`${searchKey}을 입력해 주세요`}
-        onChange={(e) => setSearch(e.target.value)}
+        //onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => setInputValue(e.target.value)}
       />
+      {/* <button onClick={() => setSearch(inputValue)}>search</button> */}
+      <button onClick={onClickSearch}>search</button>
 
       <table>
         <thead>
@@ -156,25 +167,29 @@ function App() {
           <th>assist</th>
         </thead>
         <tbody>
-          {teams
-            .sort((a, b) => a[searchKey] - b[searchKey])
-            .filter((el) => el[searchKey].toString().includes(search))
-            .map((el, i) => (
-              <tr key={i}>
-                <td>{el.rank}</td>
-                <td>{el.name}</td>
-                <td>{el.win}</td>
-                <td>{el.lose}</td>
-                <td>{el.winLoseDiff}</td>
-                <td>{el.rate}</td>
-                <td>
-                  {parseInt(((el.kill + el.assist) / el.death) * 100) / 100}
-                </td>
-                <td>{el.kill}</td>
-                <td>{el.death}</td>
-                <td>{el.assist}</td>
-              </tr>
-            ))}
+          {
+            //teams
+            tmp
+              .sort((a, b) => a[searchKey] - b[searchKey])
+              .filter((el) => el[searchKey].toString().includes(search))
+              .sort((a, b) => a[searchKey] - b[searchKey])
+              .map((el, i) => (
+                <tr key={i}>
+                  <td>{el.rank}</td>
+                  <td>{el.name}</td>
+                  <td>{el.win}</td>
+                  <td>{el.lose}</td>
+                  <td>{el.winLoseDiff}</td>
+                  <td>{el.rate}</td>
+                  <td>
+                    {parseInt(((el.kill + el.assist) / el.death) * 100) / 100}
+                  </td>
+                  <td>{el.kill}</td>
+                  <td>{el.death}</td>
+                  <td>{el.assist}</td>
+                </tr>
+              ))
+          }
         </tbody>
       </table>
     </div>
